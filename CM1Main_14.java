@@ -87,15 +87,14 @@ public class CM1Main_14 {
                     System.out.print("MASUKAN NIM: ");
                     String cari = sc.next();
 
-    // 🔥 WAJIB sorting dulu
-                    dataPinjaman.cariNIM(cari);
+                    dataPinjaman.sortByNIM();
 
                     int posisi = dataPinjaman.findBinarySearch(cari, 0, dataPinjaman.idx - 1);
 
                     if (posisi != -1) {
                         dataPinjaman.listPeminjaman[posisi].tampilPeminjaman();
                     } else {
-                        System.out.println("Data tidak ditemukan");
+                    System.out.println("Data tidak ditemukan");
                     }
                     break;
                 case 0:

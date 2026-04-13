@@ -40,6 +40,19 @@ public class PeminjamanData_14 {
             listPeminjaman[j] = temp;
         }
     }
+
+    void sortByNIM(){
+    for(int i=0; i<idx-1; i++){
+        for(int j=0; j<idx-i-1; j++){
+            if(listPeminjaman[j].mhs.nim.compareTo(listPeminjaman[j+1].mhs.nim) > 0){
+                Peminjiman_14 temp = listPeminjaman[j];
+                listPeminjaman[j] = listPeminjaman[j+1];
+                listPeminjaman[j+1] = temp;
+            }
+        }
+    }
+}
+
     int findBinarySearch(String cari, int left, int right){
     if (right >= left) {
         int mid = (left + right) / 2;
@@ -57,14 +70,4 @@ public class PeminjamanData_14 {
     return -1;
 }
 
-    int cariNIM(String nim){
-    for(int i = 0; i < listPeminjaman.length; i++){
-        if(listPeminjaman[i] != null){
-            if(listPeminjaman[i].mhs.nim.equals(nim)){
-                return i;
-            }
-        }
-    }
-    return -1;
-}
 }
